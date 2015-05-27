@@ -1,0 +1,11 @@
+<h2>welcome to deck index page !</h2>
+
+<div><%= link_to "New deck", "decks/new" %></div>
+
+<br/>
+<% @decks.each do |deck| %>
+    <div>
+      <%= link_to deck.name, "decks/#{deck.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to "Delete Deck", "decks/#{deck.id}", method: :delete %>
+    </div>
+<% end %>
